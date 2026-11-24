@@ -82,7 +82,7 @@ public class Main {
                     boolean encontrouAlerta = false;
                     for (Produto p : produtos) {
                         if (p.verificarEstoqueBaixo()) {
-                            System.out.println("⚠️ ALERTA: " + p.getNome() + " tem apenas " + p.getQtdEstoque() + " unidades em estoque!");
+                            System.out.println(" ALERTA: " + p.getNome() + " tem apenas " + p.getQtdEstoque() + " unidades em estoque!");
                             encontrouAlerta = true;
                         }
                     }
@@ -113,9 +113,9 @@ public class Main {
                     }
 
                     if (produtoEscolhido == null) {
-                        System.out.println("❌ Produto não encontrado!");
+                        System.out.println(" Produto não encontrado!");
                     } else if (produtoEscolhido.getQtdEstoque() < qtdVendida) {
-                        System.out.println("❌ Estoque insuficiente! Disponível: " + produtoEscolhido.getQtdEstoque());
+                        System.out.println(" Estoque insuficiente! Disponível: " + produtoEscolhido.getQtdEstoque());
                     } else {
                         Venda venda = new Venda(0, pagamento, atendente);
                         ItemVenda item = new ItemVenda(0, produtoEscolhido, qtdVendida, produtoEscolhido.getPreco());
@@ -126,7 +126,7 @@ public class Main {
 
                         
                         if ((produtoEscolhido.getQtdEstoque() - qtdVendida) < produtoEscolhido.getEstoqueMinimo()) {
-                            System.out.println("⚠️ AVISO: O estoque de " + produtoEscolhido.getNome() + " ficou abaixo do mínimo!");
+                            System.out.println(" AVISO: O estoque de " + produtoEscolhido.getNome() + " ficou abaixo do mínimo!");
                         }
                     }
                     break;
